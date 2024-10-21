@@ -1,6 +1,16 @@
-course_name = "Python"
-total_tasks = 12
-hours_spent = 1.5
-average_execution_time = hours_spent/total_tasks
-print("Курс: ", course_name, ', всего задач:', total_tasks, ", затрачено часов:", hours_spent,
-      ", среднее время выполнения", average_execution_time, "часа ")
+my_dict = {'Антон': 2006, 'Maria': 1999, 'Семен': 2010}
+print('Dict:', my_dict)
+print('Existing value:', my_dict.get('Антон'))
+print('Not existing value:', my_dict.get('Alex','Нет'))
+a = my_dict.pop('Maria')
+print('Delete value:', a)
+my_dict.update({'Anna': 2001, 'Саша': 2000})
+print('Modified dictionary:', my_dict)
+print(my_dict.keys())
+print()
+my_set = {1, 2, 3, 'Яблоко', 12, 30, 1, (1, 2)}
+print('Set:', my_set)
+my_set.add('Milk')
+my_set.add(22)
+my_set.remove('Яблоко')
+print('Modified set:', my_set)
