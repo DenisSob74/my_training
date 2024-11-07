@@ -3,12 +3,10 @@ second = input('Введите чило: ')
 third = input('Введите число: ')
 
 if first == second and second == third:
-    print(2)
+    print(3)
 
 elif first == second or second == third or first == third:
-    print(first)
-    print(second)
-    print(third)
+    print(2)
 
 else:
     print(0)
