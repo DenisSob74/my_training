@@ -1,15 +1,17 @@
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 primers = []
 not_primers = []
-for number in range(1, len(numbers) + 1):
-    index = 0
-    for is_prime in range(1, number + 1):
-        if number % is_prime == 0:
-            index += 1
-    if index == 2:
-        primers.append(is_prime)
-    elif number > 1:
-        not_primers.append(is_prime)
+for index in range(len(numbers)):
+    is_prime = True
+    for divider in range(2, numbers[index]):
+        if numbers[index] % divider == 0:
+            is_prime = False
+    if numbers[index] > 1:
+        if is_prime == True:
+            primers.append(numbers[index])
+        else:
+            not_primers.append(numbers[index])
 
 print('primers = ', primers)
 print('not_primers =', not_primers)
+
