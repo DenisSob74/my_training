@@ -1,20 +1,20 @@
 calls = 0
 
 
-def couns_calls():
+def count_calls():
     global calls
     calls += 1
 
 
 def string_info(string):
     line = string
-    string_info = [len(line), line.upper(), line.lower()]
-    couns_calls()
+    string_info = (len(line), line.upper(), line.lower())
+    count_calls()
     return string_info
 
 
 def is_contains(string, list_to_search):
-    couns_calls()
+    count_calls()
     string = str(string).lower()
     list_to_search = list(list_to_search)
     for elem in range(len(list_to_search)):
