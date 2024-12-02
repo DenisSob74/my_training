@@ -4,7 +4,7 @@ def single_root_words(root_word, *other_words):
     for word in other_words:
         if word.lower() in root_word or root_word in word.lower():
             same_words.append(word)
-        return same_words
+    return same_words
 
 
 result1 = single_root_words('rich', 'richiest', 'orichalcum', 'cheers', 'richies')
