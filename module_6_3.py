@@ -1,19 +1,16 @@
-from turtle import speed
-
+import random
 
 class Animal:
     live = True
-    sound = None                # звук (изночально остсутствует)
-    _DEGREE_OF_DANGER = 0       # степень опасности существа
+    _DEGREE_OF_DANGER = 0               # степень опасности существа
 
-    def __init__(self, name):
+    def __init__(self, name, speed):
         self.name = name
+        self.cords = [0, 0, 0]          # координаты в пространстве
         self.speed = speed
-        self.cords = [0, 0, 0]      # координаты в пространстве
-
-
 
     def move(self, dx, dy, dz):
+
         new_x = self.cords + dx * self.speed
         new_y = self.cords + dy * self.speed
         new_z = self.cords + dz * self.speed
@@ -34,35 +31,31 @@ class Animal:
         else:
             print("Be careful, i'm attacking you 0_0")
 
-
-
-
+    def speak(self, sound=None):
+        return sound  # звук (изночально остсутствует)
 
 class Bird(Animal):
-    beak = False  # наличие клюва
-
+    beak = False                    # наличие клюва
 
     def lay_eggs(self):
-        print("Here are(is) <случайное число от 1 до 4> eggs for you")
+        self.random_eggs = random.randint(1, 4)
+        print(f"Here are(is) {self.random_eggs} eggs for you")
 
 
-class AquaticAnimal(Animal):
+class AquaticAnimal(Animal):        # класс описывающий плавающего животного
     _DEGREE_OF_DANGER = 3
-
 
     def dive_in(self, dz):
         dz = abs(dz)
-        self.cords['z'] -= dz*0.5
+        self.cords['z'] -= dz * 0.5
 
 
-class PoisonousAnimal(Animal):
+class PoisonousAnimal(Animal):      # класс описывающий ядовитых животных
     _DEGREE_OF_DANGER = 8
 
 
 class Duckbill(Bird, AquaticAnimal, PoisonousAnimal):
-    sound = "Click-click-click"         # - звук, который издаёт утконос
-
-
+    sound = "Click-click-click"     #  звук, который издаёт утконос
 
 
 db = Duckbill(10)
