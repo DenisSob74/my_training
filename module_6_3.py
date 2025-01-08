@@ -3,10 +3,10 @@ import random
 
 class Animal:
     live = True
-    _DEGREE_OF_DANGER = 0  # степень опасности существа
+    _DEGREE_OF_DANGER = 0
 
     def __init__(self, speed):
-        self._cords = [0, 0, 0]  # координаты в пространстве
+        self._cords = [0, 0, 0]
         self.speed = speed
 
     def move(self, dx, dy, dz):
@@ -32,18 +32,18 @@ class Animal:
 
     def speak(self, sound=None):
         self.sound = sound
-        return sound  # звук (изночально остсутствует)
+        return sound
 
 
 class Bird(Animal):
-    beak = True  # наличие клюва
+    beak = True
 
     def lay_eggs(self):
         self.random_eggs = random.randint(1, 4)
         print(f"Here are(is) {self.random_eggs} eggs for you")
 
 
-class AquaticAnimal(Animal):  # класс описывающий плавающего животного
+class AquaticAnimal(Animal):
 
     _DEGREE_OF_DANGER = 3
 
@@ -52,12 +52,12 @@ class AquaticAnimal(Animal):  # класс описывающий плавающ
         return
 
 
-class PoisonousAnimal(Animal):  # класс описывающий ядовитых животных
+class PoisonousAnimal(Animal):
     _DEGREE_OF_DANGER = 8
 
 
 class Duckbill(Bird, AquaticAnimal, PoisonousAnimal):
-    def __init__(self, speed, sound="Click-click-click"):  # звук, который издаёт утконос
+    def __init__(self, speed, sound="Click-click-click"):
         super().__init__(speed)
         self.sound = sound
 
