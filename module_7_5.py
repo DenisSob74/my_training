@@ -1,9 +1,7 @@
 import os
 import time
-directory = '.'
 
-#path = os.path.join(r'P:\pythonproject-university\module_7\main.py')
-#print(path)
+directory = '.'
 
 for root, dirs, files in os.walk(directory):
 
