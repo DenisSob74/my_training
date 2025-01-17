@@ -5,7 +5,7 @@ class Product:
         self.category = category
 
     def __str__(self):
-        return f'Название {name}, вес {weight}, категория {category}'
+        return f'Название {self.name}, вес {self.weight}, категория {self.category}'
 
 class Shop():
 
